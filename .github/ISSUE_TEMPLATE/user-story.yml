@@ -1,0 +1,86 @@
+name: User Story
+description: Create a user story for Ralph to implement
+title: "[Story]: "
+labels: ["ralph-story"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## User Story for Ralph
+        Fill out this form to create a user story that Ralph can pick up and implement autonomously.
+
+        **Keep stories small!** Each story should be completable in one iteration (one context window).
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: Lower number = higher priority. Ralph works on priority 1 first.
+      options:
+        - "1 - Critical"
+        - "2 - High"
+        - "3 - Medium"
+        - "4 - Low"
+        - "5 - Nice to have"
+    validations:
+      required: true
+
+  - type: input
+    id: user-role
+    attributes:
+      label: As a...
+      description: Who is the user or role?
+      placeholder: "user, developer, admin, etc."
+    validations:
+      required: true
+
+  - type: input
+    id: user-want
+    attributes:
+      label: I want...
+      description: What feature or capability?
+      placeholder: "to filter tasks by status"
+    validations:
+      required: true
+
+  - type: input
+    id: user-benefit
+    attributes:
+      label: So that...
+      description: What benefit or value does this provide?
+      placeholder: "I can focus on what needs attention"
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: |
+        List each criterion on a new line. These will become checkboxes.
+        Be specific and verifiable - avoid vague criteria like "works correctly".
+        Note: "Build and validation passes without errors" is automatically added by Ralph.
+      placeholder: |
+        Filter dropdown shows options: All, Active, Completed
+        Selecting a filter updates the list immediately
+        Filter persists in URL params
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context (Optional)
+      description: Any technical notes, links to related issues, or helpful context for implementation.
+      placeholder: "Reuse the existing FilterDropdown component from src/components/ui"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: ui-story
+    attributes:
+      label: Story Type
+      description: Check if this story involves UI changes
+      options:
+        - label: This story changes the UI (requires browser verification)
+          required: false
